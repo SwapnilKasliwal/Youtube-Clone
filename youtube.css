@@ -1,0 +1,271 @@
+main{
+    background-color: #f9f9f9;
+    padding-top:64px;
+    padding-left: 80px;
+    padding-right: 24px;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    height: 57px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(218, 210, 210, 0.7);
+    background-color: white;
+    z-index: 100;
+    }
+header img{
+    cursor: pointer;
+}
+/* .video-card{
+    width: 300px;
+    display: inline-block;
+}  - This is no more required because all the things which we are defining is taken care of by other properties by themselves*/
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 57px;
+    width: 70px;
+    background-color: white;
+    font-size: 10px;
+    z-index: 100;
+}
+.sidebar img{
+    display: block;
+    width: 24px;
+}
+.sidebar div{
+    padding-top: 17px;
+    padding-bottom: 6px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.sidebar div:hover{
+    background-color: rgb(222, 222, 222);
+}
+.sidebar p{
+    margin-top: 6px;
+    font-size: 10px;
+}
+.thumbnail{
+    width: 100%;
+    margin-bottom: 0px;
+    /* object-fit: cover; - We Don't need this because it is only required to fit the size of the with keeping its shape 
+    object-position: left - This is required when the image is big enough for the size and we want to show the left side of the image*/
+}
+.card-data{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items:start;
+    justify-content: flex-start;
+}
+.channelImg{
+    width: 36px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 13px;
+}
+.heading{
+    font-size:14px;
+    font-weight: 500;
+}
+.video-stats{
+    font-size:12px;
+    color: grey;
+    line-height: 5px;
+}
+p{
+    font-family: Roboto, Arial;
+}
+.video-card-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 30px;
+    margin-left: 16px;
+    margin-top: 16px;
+}    
+#youtube-logo{
+    width: 90px;
+}
+#hamburger-menu{
+    height: 24px;
+    margin-left: 24px;
+    margin-right: 22px;
+}
+#search-bar{
+    flex: 1;
+    font-family: Roboto, Arial;
+    height: 37px;
+    size: 0px;
+    width: 0;
+    max-width: 350px;
+    font-size: 16px;
+    padding-left: 10px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    border: 1px solid #cccccc;
+    box-shadow: inset 1px 1px #cccccc;
+}
+#search-bar:focus{
+    outline-color: rgb(39, 141, 177);
+}
+.middle button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    width: 64px;
+    margin-left: -1px;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+.middle div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    background-color: #faf5f5;
+    width: 40px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+.middle img{
+    width: 24px;
+
+}
+.left{
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+.middle{
+    margin-left: 30px;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-right: 24px;
+    margin-left: 30px;
+    width: 188px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.right img{
+    height: 24px;
+}
+#profile{
+    width: 30px;
+    height: auto;
+    border-radius: 15px;
+}
+#notification-bell{
+    position: relative;
+}
+#notification-bell div{
+    position:absolute;
+    bottom: 15px;
+    right: -3px;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(201, 30, 30);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+#create, #voiceSearch, #youtubeApps, #notificationBell{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltip{
+    position: absolute;
+    background-color: rgb(95, 93, 93);
+    bottom: -50px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    color: white;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius:1px;
+    pointer-events: none;
+    transition: .15s opacity;
+}
+#searchBtn:hover .tooltip, #voiceSearch:hover .tooltip, #create:hover .tooltip, #youtubeApps:hover .tooltip, #notificationBell:hover .tooltip{
+    opacity: .9;
+}
+
+#searchBtn .tooltip, #voiceSearch .tooltip{
+    margin: 0px;
+    width: fit-content;
+    position: absolute;
+    background-color: rgb(95, 93, 93);
+    bottom: -50px;
+    white-space: nowrap;
+    opacity: 0;
+    color: white;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    pointer-events: none;
+    border-radius: 1px;
+    transition: .15s opacity;
+} 
+#searchBtn .tooltip{
+font-size: 12px;
+}
+#voiceSearch .tooltip{
+font-size: 14px;
+}
+.video-thumbnail{
+    position: relative;
+}
+.video-thumbnail .thumbnail-tooltip{
+    position: absolute;
+    bottom:10px;
+    right: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 5px 3px 5px;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+}
